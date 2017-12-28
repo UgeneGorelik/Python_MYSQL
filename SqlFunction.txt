@@ -1,0 +1,45 @@
+
+##Several examples on MYSQl functions
+
+
+#basic concat functions
+DELIMITER //
+
+CREATE FUNCTION GETFULLNAME(fname CHAR(250),lname CHAR(250))
+    RETURNS CHAR(250)
+    BEGIN
+        DECLARE fullname CHAR(250);
+        SET fullname=CONCAT(fname,' ',lname);
+        RETURN fullname;
+    END //
+
+DELIMITER ;
+
+
+#selecy function
+DELIMITER $$
+CREATE PROCEDURE selectEmplyees1(
+ IN orderStatus VARCHAR(25))
+BEGIN
+ SELECT orderStatus
+ FROM employee
+ WHERE age = orderStatus;
+END$$
+DELIMITER ;
+
+
+
+$factorial recursive
+DELIMITER $$
+CREATE PROCEDURE find_fact(IN n INT)
+BEGIN
+      CALL factorial(n,@fact);
+     
+    SELECT @fact;
+END
+$$
+
+
+
+
+
