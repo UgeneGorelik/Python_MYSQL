@@ -49,21 +49,7 @@ cursor.execute('CREATE TABLE favorite_food    '
 
 
 
-#examples of using query execute using arguments
-query="insert into person (person_id,fname,lname,gender,birth_date) VALUES(%s,%s,%s,%s,%s)"
-
-args=('1','avi','grainik','M', '1972-05-27')
-
-
-query="insert into person (person_id,fname,lname,gender,birth_date) VALUES(%s,%s,%s,%s,%s)"
-
-args=('2','natan','alterman','F', '1972-05-27')
-
-query="INSERT INTO favorite_food (person_id, food) VALUES(%s,%s) "
-
-args=('1','pizza')
-
-
+#example of using query execute using arguments
 query="INSERT INTO favorite_food (person_id, food) VALUES(%s,%s) "
 
 args=('2','falafel')
